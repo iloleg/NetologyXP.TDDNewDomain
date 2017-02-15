@@ -1,1 +1,0 @@
-# NetologyXP.TDDNewDomain

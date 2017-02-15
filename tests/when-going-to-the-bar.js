@@ -1,6 +1,7 @@
 "use strict";
 var assert = require('chai').assert;
 var Barmen = require('../src/barmen');
+var Visitor = require('../src/visitor');
 
 
 suite('when going to the bar', function () {
@@ -24,13 +25,3 @@ suite('when going to the bar', function () {
 
 
 });
-
-class Visitor {
-    get cocktail() {
-        return "Rum & Cola";
-    }
-
-    take(cocktailName) {
-
-    }
-}

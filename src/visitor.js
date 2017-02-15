@@ -1,12 +1,16 @@
 "use strict";
 
 class Visitor {
+    constructor() {
+        this._cocktaiName = "";
+    }
+
     get cocktail() {
-        return "Rum & Cola";
+        return this._cocktaiName;
     }
 
     take(cocktailName) {
-
+        this._cocktaiName = cocktailName;
     }
 }
 

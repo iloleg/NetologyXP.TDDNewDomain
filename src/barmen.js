@@ -14,7 +14,7 @@ class Barmen {
     }
 
     makeCocktail(name) {
-
+        return name;
     }
 }
 

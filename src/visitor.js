@@ -3,6 +3,7 @@
 class Visitor {
     constructor() {
         this._cocktaiName = "";
+        this._drunkLevelInPercents = 0;
     }
 
     get cocktail() {
@@ -14,11 +15,15 @@ class Visitor {
     }
 
     drink() {
-
+        this._drunkLevelInPercents++;
     }
 
     get isABitDrunk() {
         return true;
+    }
+
+    get drunkLevelInPercents() {
+        return this._drunkLevelInPercents;
     }
 }
 

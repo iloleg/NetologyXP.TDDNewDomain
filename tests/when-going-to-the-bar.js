@@ -52,7 +52,18 @@ suite('when going to the bar', function () {
 
             assert.equal(visitor.isABitDrunk, true);
         });
+
+        test('visitor becomes more drunk after drinking second cocktail', function () {
+            let visitor = createVisitor();
+            let firstCocktail = barmen.makeCocktail("Beer");
+            let secondCocktail = barmen.makeCocktail("Beer");
+            visitor.take(firstCocktail);
+            visitor.drink();
+            visitor.take(secondCocktail);
+
+            visitor.drink();
+
+            assert.equal(visitor.drunkLevelInPercents, 1 + 1);
+        });
     });
-
-
 });

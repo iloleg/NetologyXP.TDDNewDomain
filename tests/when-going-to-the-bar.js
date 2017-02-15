@@ -50,7 +50,7 @@ suite('when going to the bar', function () {
 
             visitor.drink();
 
-            assert.equal(visitor.isABitDrunk, true);
+            assert.equal(visitor.drunkLevelInPercents, 1);
         });
 
         test('visitor becomes more drunk after drinking second cocktail', function () {

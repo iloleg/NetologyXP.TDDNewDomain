@@ -18,10 +18,6 @@ class Visitor {
         this._drunkLevelInPercents++;
     }
 
-    get isABitDrunk() {
-        return true;
-    }
-
     get drunkLevelInPercents() {
         return this._drunkLevelInPercents;
     }

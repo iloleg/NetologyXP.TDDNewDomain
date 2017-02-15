@@ -12,6 +12,14 @@ class Visitor {
     take(cocktailName) {
         this._cocktaiName = cocktailName;
     }
+
+    drink() {
+
+    }
+
+    get isABitDrunk() {
+        return true;
+    }
 }
 
 module.exports = Visitor;

@@ -20,22 +20,38 @@ suite('when going to the bar', function () {
         assert.equal(barmen.isReadyToAcceptRequests, true);
     });
 
-    test('barmen can make a drink for a visitor', function () {
-        let visitor = new Visitor();
+    let createVisitor = function () {
+        return new Visitor();
+    };
 
-        let cocktail = barmen.makeCocktail("Rum & Cola");
-        visitor.take(cocktail);
+    suite('and asking for a drink', function () {
+        test('barmen can make a drink for a visitor', function () {
+            let visitor = createVisitor();
 
-        assert.equal(visitor.cocktail, "Rum & Cola");
-    });
+            let cocktail = barmen.makeCocktail("Rum & Cola");
+            visitor.take(cocktail);
 
-    test('barmen can make a specific cocktail for a visitor', function () {
-        let visitor = new Visitor();
+            assert.equal(visitor.cocktail, "Rum & Cola");
+        });
 
-        let cocktail = barmen.makeCocktail("Tequila Sunrise");
-        visitor.take(cocktail);
+        test('barmen can make a specific cocktail for a visitor', function () {
+            let visitor = createVisitor();
 
-        assert.equal(visitor.cocktail, "Tequila Sunrise");
+            let cocktail = barmen.makeCocktail("Tequila Sunrise");
+            visitor.take(cocktail);
+
+            assert.equal(visitor.cocktail, "Tequila Sunrise");
+        });
+
+        test('visitor becomes a bit drunk after drinking cocktail', function () {
+            let visitor = createVisitor();
+            let cocktail = barmen.makeCocktail("Beer");
+            visitor.take(cocktail);
+
+            visitor.drink();
+
+            assert.equal(visitor.isABitDrunk, true);
+        });
     });
 
 

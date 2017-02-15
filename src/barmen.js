@@ -8,6 +8,14 @@ class Barmen {
     wakeUp() {
 
     }
+
+    acceptRequestFor(visitor, cocktailName) {
+
+    }
+
+    makeCocktail(name) {
+
+    }
 }
 
 module.exports = Barmen;

@@ -11,4 +11,26 @@ suite('when going to the bar', function () {
 
         assert.equal(barmen.isReadyToAcceptRequests, true);
     });
+
+    test('barmen can make a drink for a visitor', function () {
+        let visitor = new Visitor();
+        let barmen = new Barmen();
+
+        let cocktail = barmen.makeCocktail("Rum & Cola");
+        visitor.take(cocktail);
+
+        assert.equal(visitor.cocktail, "Rum & Cola");
+    });
+
+
 });
+
+class Visitor {
+    get cocktail() {
+        return "Rum & Cola";
+    }
+
+    take(cocktailName) {
+
+    }
+}

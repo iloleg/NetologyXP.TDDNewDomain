@@ -1,0 +1,26 @@
+{
+  "name": "netology-xp-tdd-new-domain",
+  "version": "1.0.0",
+  "description": "XP. Test Driven Development. TDD New Domain.",
+  "scripts": {
+    "test": "node_modules/mocha/bin/mocha --ui tdd -R spec tests/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SmartStepGroupTrainings/NetologyXP.TDDNewDomain.git"
+  },
+  "keywords": [
+    "XP",
+    "test-driven-development",
+    "new-domain",
+    "smart-tdd",
+    "js"
+  ],
+  "author": "SmartStepGroup",
+  "devDependencies": {
+    "mocha": "~2.4.5",
+    "chai": "~3.5.0",
+    "chai-http": "~2.0.1",
+    "chai-string": "~1.2.0"
+  }
+}

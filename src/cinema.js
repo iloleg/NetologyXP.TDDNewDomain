@@ -7,12 +7,22 @@ class Cinema {
         this._data = data;
     }
 
+    get availableFilms() {
+        return this._data.availableFilms;
+    }
+
+
     askTickets(count , film) {
         let tickets = [];
-        for (let i = 0; i++ < count;) {
-            tickets.push(new Ticket({
-                film: film
-            }));
+
+        if (!film) film = this.availableFilms[0];
+
+        if (this.availableFilms.indexOf(film) != -1) {
+            for (let i=0; i++<count;) {
+                tickets.push(new Ticket({
+                    film: film
+                }));
+            }
         }
 
         return tickets;

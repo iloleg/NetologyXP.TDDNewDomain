@@ -16,6 +16,7 @@ suite("cinema tests", function () {
             cinema = new Cinema({
                 availableFilms: ["Doctor House", "The 100"],
                 capacity: 295,
+                prices: [8, 10],
             });
         });
 
@@ -90,6 +91,22 @@ suite("cinema tests", function () {
 
                 assert.equal(sum, 40);
             });
+
+
+            test("price of 10 tickets to The 100 is 80 usd", function() {
+                let count = 10;
+                let film = "The 100";
+                let tickets = cinema.askTickets(count, film);
+
+                let sum = 0;
+                for (let i in tickets) {
+                    sum += tickets[i].price;
+                }
+
+                assert.equal(sum, 80);
+            });
+
+
         });
 
         teardown(function () {

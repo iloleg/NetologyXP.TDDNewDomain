@@ -7,10 +7,20 @@ class Cinema {
         this._data = data;
     }
 
-    askTickets() {
-        return [{
+    askTickets(count) {
+        let tickets = [];
+        for (let i = 0; i++ < count;) {
+            tickets.push(new Ticket());
+        }
 
-        }];
+        return tickets;
     }
 }
 module.exports = Cinema;
+
+class Ticket {
+    constructor(data) {
+        this._data = data;
+    }
+}
+module.exports = Ticket;

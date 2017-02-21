@@ -22,5 +22,9 @@ class Ticket {
     constructor(data) {
         this._data = data;
     }
+
+    get film() {
+        return "Doctor House";
+    }
 }
 module.exports = Ticket;

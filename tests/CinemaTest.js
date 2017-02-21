@@ -27,6 +27,18 @@ suite("cinema tests", function () {
             let tickets = cinema.askTickets(count);
             assert.equal(tickets.length, 5);
         });
+
+        test("customer ask tickets to Doctor House", function() {
+            let count = 3;
+            let film = "Doctor House";
+            let tickets = cinema.askTickets(count, film);
+
+            for (let i in tickets) {
+                assert.equal(tickets[i].film, film);
+            }
+        });
+
+
         teardown(function () {
 
         });

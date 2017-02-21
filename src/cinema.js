@@ -24,7 +24,8 @@ class Cinema {
         if (this.availableFilms.indexOf(film) != -1) {
             for (let i=0; i++<count;) {
                 tickets.push(new Ticket({
-                    film: film
+                    film: film,
+                    price: 10
                 }));
             }
         }
@@ -43,6 +44,9 @@ class Ticket {
 
        // return "Doctor House";
         return this._data.film;
+    }
+    get price() {
+        return this._data.price;
     }
 }
 module.exports = Ticket;

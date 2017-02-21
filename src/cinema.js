@@ -7,10 +7,12 @@ class Cinema {
         this._data = data;
     }
 
-    askTickets(count) {
+    askTickets(count , film) {
         let tickets = [];
         for (let i = 0; i++ < count;) {
-            tickets.push(new Ticket());
+            tickets.push(new Ticket({
+                film: film
+            }));
         }
 
         return tickets;
@@ -24,7 +26,9 @@ class Ticket {
     }
 
     get film() {
-        return "Doctor House";
+
+       // return "Doctor House";
+        return this._data.film;
     }
 }
 module.exports = Ticket;

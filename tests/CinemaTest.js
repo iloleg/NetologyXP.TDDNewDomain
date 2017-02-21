@@ -3,7 +3,7 @@
  */
 "use strict";
 var assert = require('chai').assert;
-var Cinema = require('../src/cinema');
+var  Cinema = require('../src/cinema');
 
 
 suite("cinema tests", function () {
@@ -28,9 +28,19 @@ suite("cinema tests", function () {
             assert.equal(tickets.length, 5);
         });
 
-        test("customer ask tickets to Doctor House", function() {
+        test("customer ask tickets to Doctor House", function () {
             let count = 3;
             let film = "Doctor House";
+            let tickets = cinema.askTickets(count, film);
+
+            for (let i in tickets) {
+                assert.equal(tickets[i].film, film);
+            }
+        });
+
+        test("customer ask tickets to The 100", function () {
+            let count = 2;
+            let film = "Interstellar";
             let tickets = cinema.askTickets(count, film);
 
             for (let i in tickets) {

@@ -15,17 +15,23 @@ class Cinema {
         return this._data.capacity;
     }
 
+    get prices() {
+        return this._data.prices;
+    }
 
     askTickets(count , film) {
         let tickets = [];
 
         if (!film) film = this.availableFilms[0];
+        if (count > this.capacity) count = this.capacity;
 
-        if (this.availableFilms.indexOf(film) != -1) {
+        let filmId = this.availableFilms.indexOf(film);
+
+        if (filmId != -1) {
             for (let i=0; i++<count;) {
                 tickets.push(new Ticket({
                     film: film,
-                    price: 10
+                    price: this.prices[filmId]
                 }));
             }
         }

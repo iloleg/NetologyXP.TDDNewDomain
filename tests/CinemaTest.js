@@ -13,7 +13,9 @@ suite("cinema tests", function () {
         let cinema;
 
         setup(function () {
-            cinema = new Cinema({});
+            cinema = new Cinema({
+                availableFilms: ["Doctor House", "The 100"],
+            });
         });
 
         test("customer ask one ticket", function () {
@@ -40,7 +42,7 @@ suite("cinema tests", function () {
 
         test("customer ask tickets to The 100", function () {
             let count = 2;
-            let film = "Interstellar";
+            let film = "The 100";
             let tickets = cinema.askTickets(count, film);
 
             for (let i in tickets) {
@@ -48,6 +50,12 @@ suite("cinema tests", function () {
             }
         });
 
+        test("customer ask tickets to unavailable film FBI", function() {
+            let count = 5;
+            let film = "FBI";
+            let tickets = cinema.askTickets(count, film);
+            assert.equal(tickets.length, 0);
+        });
 
         teardown(function () {
 

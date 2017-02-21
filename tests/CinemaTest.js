@@ -15,6 +15,7 @@ suite("cinema tests", function () {
         setup(function () {
             cinema = new Cinema({
                 availableFilms: ["Doctor House", "The 100"],
+                capacity: 295,
             });
         });
 
@@ -56,6 +57,16 @@ suite("cinema tests", function () {
             let tickets = cinema.askTickets(count, film);
             assert.equal(tickets.length, 0);
         });
+
+        test("customer ask 300 tickets - more then cinema capacity", function() {
+
+            let count = 300;
+            let film = "Doctor House";
+            let tickets = cinema.askTickets(count, film);
+            assert.equal(tickets.length, cinema.capacity);
+
+        });
+
 
         teardown(function () {
 

@@ -11,6 +11,10 @@ class Cinema {
         return this._data.availableFilms;
     }
 
+    get capacity() {
+        return this._data.capacity;
+    }
+
 
     askTickets(count , film) {
         let tickets = [];
